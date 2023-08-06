@@ -34,6 +34,7 @@
 \def \INV@text@vat@eng {VAT}
 \def \INV@text@itemtotal@eng {Sum}
 \def \INV@text@subtotal@eng {Subtotal}
+\def \INV@text@amount@eng {Amount}
 \def \INV@text@total@eng {Total}
 \def \INV@text@paymentinfo@eng {Payment info}
 \def \INV@text@totallong@eng {Total}
@@ -51,6 +52,7 @@
 \def \INV@text@vat@nobm {MVA}
 \def \INV@text@itemtotal@nobm {Sum}
 \def \INV@text@subtotal@nobm {MVA-grunnlag}
+\def \INV@text@amount@nobm {NOT SET}
 \def \INV@text@total@nobm {Å betale}
 \def \INV@text@paymentinfo@nobm {Betalingsinformasjon}
 \def \INV@text@totallong@nobm {Sum å betale}
@@ -68,6 +70,7 @@
 \def \INV@text@vat@deu {Umsatzsteuer}
 \def \INV@text@itemtotal@deu {Gesamtpreis}
 \def \INV@text@subtotal@deu {Zwischensumme}
+\def \INV@text@amount@deu {Menge}
 \def \INV@text@total@deu {Summe}
 \def \INV@text@paymentinfo@deu {Daten für Ihre Zahlung}
 \def \INV@text@totallong@deu {Betrag}
@@ -115,6 +118,7 @@
 \def \INV@content@addroneline {{\color{red} Address line 1 / Address line 2}}
 \def \INV@content@toname {{\color{red} Company}}
 \def \INV@content@toaddr {{\color{red} Address line 1 \\ Address line 2}}
+\def \INV@content@amount {{\color{red} Amount}}
 \def \INV@content@subtotal {{\color{red} Subtotal}}
 \def \INV@content@vat {{\color{red} VAT}}
 \def \INV@content@total {{\color{red} Total}}
@@ -135,7 +139,7 @@
 \newcommand{\setourref}[1]{\def \INV@content@ourref {#1}}
 \newcommand{\setinvoicedate}[1]{\def \INV@content@date {#1}}
 \newcommand{\setdeadline}[1]{\def \INV@content@deadline {\DayAfter[#1]}}
-\newcommand{\additem}[4]{\ifdef{\INV@content@list}{\appto \INV@content@list {\\ #1 & #2 & #3 \% & #4}}{\def \INV@content@list {#1 & #2 & #3 \% & #4}}}
+\newcommand{\additem}[5]{\ifdef{\INV@content@list}{\appto \INV@content@list {\\ #1 & #2 & #3 & #4 \% & #5}}{\def \INV@content@list {#1 & #2 & #3 & #4 \% & #5}}}
 \newcommand{\setsubtotal}[1]{\def \INV@content@subtotal {#1}}
 \newcommand{\setvat}[1]{\def \INV@content@vat {#1}}
 \newcommand{\settotal}[1]{\def \INV@content@total {#1}}
@@ -169,9 +173,9 @@
 	\vspace{3cm}
 	
 	\renewcommand{\arraystretch}{1.5}
-	\begin{tabularx}{\textwidth}{X c c r}
-		\textbf{\csname INV@text@description@\INV@lang\endcsname} & \textbf{\csname INV@text@itemprice@\INV@lang\endcsname} & \hspace{10pt}\textbf{\csname INV@text@vat@\INV@lang\endcsname}\hspace{10pt} & \textbf{\csname INV@text@itemtotal@\INV@lang\endcsname} \\ \arrayrulecolor{linecolor}\hline
-		\ifdef{\INV@content@list}{\INV@content@list}{{\color{red} No Items yet} & & &}
+	\begin{tabularx}{\textwidth}{X c c c r}
+		\textbf{\csname INV@text@description@\INV@lang\endcsname} & \textbf{\csname INV@text@itemprice@\INV@lang\endcsname} & \hspace{10pt}\textbf{\csname INV@text@amount@\INV@lang\endcsname} & \hspace{10pt}\textbf{\csname INV@text@vat@\INV@lang\endcsname}\hspace{10pt} & \textbf{\csname INV@text@itemtotal@\INV@lang\endcsname} \\ \arrayrulecolor{linecolor}\hline
+		\ifdef{\INV@content@list}{\INV@content@list}{{\color{red} No Items yet} & & & &}
 	\end{tabularx}
 	
 	\vspace{2cm}
