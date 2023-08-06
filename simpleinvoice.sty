@@ -17,6 +17,8 @@
 \DeclareOption{norsk}{\def \INV@lang     {nobm}}
 \DeclareOption{norwegian}{\def \INV@lang {nobm}}
 \DeclareOption{bokmaal}{\def \INV@lang {nobm}}
+\DeclareOption{german}{\def \INV@lang {deu}}
+\DeclareOption{ngerman}{\def \INV@lang {deu}}
 
 \ProcessOptions
 
@@ -54,6 +56,23 @@
 \def \INV@text@totallong@nobm {Sum å betale}
 \def \INV@text@accountnum@nobm {Kontonummer}
 \def \INV@text@warning@nobm {Ved betaling etter forfall kan det påløpe renter og gebyr etter statens satser. Ved innsigelse vil kravet kunne bli sendt til forliksrådet, jf. tvistelovens § 5-2.}
+
+\def \INV@text@invoice@deu {Rechnung}
+\def \INV@text@ourref@deu {USt-ID-Nr.}
+\def \INV@text@yourref@deu {Ihr Zeichen}
+\def \INV@text@invnum@deu {Rechnungsnummer}
+\def \INV@text@invdate@deu {Rechnungsdatum}
+\def \INV@text@deadline@deu {Fällig}
+\def \INV@text@description@deu {Beschreibung}
+\def \INV@text@itemprice@deu {Einzelpreis}
+\def \INV@text@vat@deu {Umsatzsteuer}
+\def \INV@text@itemtotal@deu {Gesamtpreis}
+\def \INV@text@subtotal@deu {Zwischensumme}
+\def \INV@text@total@deu {Summe}
+\def \INV@text@paymentinfo@deu {Daten für Ihre Zahlung}
+\def \INV@text@totallong@deu {Betrag}
+\def \INV@text@accountnum@deu {Bankverbindung}
+\def \INV@text@warning@deu {Bitte zahlen Sie innerhalb von 30 Tagen nach Erhalt der Rechnung.}
 
 % Import neccesary libraries
 \RequirePackage{advdate}
