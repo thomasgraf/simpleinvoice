@@ -8,6 +8,7 @@ fi
 echo "Copying files"
 mkdir -p $HOME/Library/texmf/tex/latex/simpleinvoice
 cp simpleinvoice.sty $HOME/Library/texmf/tex/latex/simpleinvoice
+cp simpleinvoice_sbr.sty $HOME/Library/texmf/tex/latex/simpleinvoice
 echo "Updating package index"
 cd $TEXMFHOME && mktexlsr > /dev/null
 
